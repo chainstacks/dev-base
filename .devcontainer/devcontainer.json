@@ -1,0 +1,78 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "realSrg-node-ts-turbo-base",
+	"build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "Dockerfile"
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "eamodio.gitlens",
+		  "ms-azuretools.vscode-docker",
+		  "eamodio.gitlens",
+		  "heybourn.headwind",
+		  "googlecloudtools.cloudcode",
+		  "codezombiech.gitignore",
+		  "ms-vscode.vscode-typescript-next",
+		  "ms-kubernetes-tools.vscode-kubernetes-tools",
+		  "NextNav.NextNav",
+		  "christian-kohler.npm-intellisense",
+		  "christian-kohler.path-intellisense",
+		  "ms-playwright.playwright",
+		  "Jacano.vscode-pnpm",
+		  "esbenp.prettier-vscode",
+		  "urbantrout.refactor-css",
+		  "PeterMekhaeil.vscode-tailwindcss-explorer",
+		  "bradlc.vscode-tailwindcss",
+		  "austenc.tailwind-docs",
+		  "bourhaouta.tailwindshades",
+		  "mxsdev.typescript-explorer",
+		  "vitest.explorer",
+		  "emmanuelbeziat.vscode-great-icons",
+		  "vscode-icons-team.vscode-icons",
+		  "michelemelluso.gitignore",
+		  "ms-vscode.remote-serv",
+		  "felipecaputo.git-project-manager",
+		  "donjayamanne.githistory",
+		  "ecmel.vscode-html-css",
+		  "GitHub.remotehub",
+		  "ms-vscode.test-adapter-converter",
+		  "Orta.vscode-twoslash-queries",
+		  "hbenl.vscode-test-explorer",
+		  "dunstontc.vscode-docker-syntax",
+		  "HashiCorp.terraform"
+		]
+	  }
+	},
+  
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {	  
+	  "ghcr.io/devcontainers/features/common-utils:2": {
+		"configureZshAsDefaultShell": true
+	  },
+	  "ghcr.io/devcontainers/features/python:1": {},
+	  "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+		"plugins": "git-commit aliases history python themes zsh-autosuggestions zsh-syntax-highlighting",
+		"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting.git"
+	  }	  
+	}	
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",	
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+	// Extra steps after build:
+  	// change zsh theme: `theme jonathan`
+  	// git config user.name "Your Name"
+  	// git config user.email "youremail@yourdomain.com"
+  	// (no global to avoid rewrite every time container rebuilds)
+}
