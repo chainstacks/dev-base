@@ -36,6 +36,7 @@ jobs:
       - name: Pre-build and push dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.ext_ver.outputs.version }}
+          imageName: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           cacheFrom: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          imageTag: ${{ steps.ext_ver.outputs.version }}
           push: always
