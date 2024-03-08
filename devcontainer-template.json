@@ -1,0 +1,13 @@
+{
+    "id": "realSrg-node-ts-turbo-base",
+    "version": "0.0.1",
+    "name": "realSrg-node-ts-turbo-base",
+    "description": "Develop Node.js based applications in TypeScript. Includes Node.js, eslint, nvm, yarn, and the TypeScript compiler.",
+    "documentationURL": "https://github.com/chainstacks/dev-base",
+    "publisher": "chainsta.x",
+    "licenseURL": "https://github.com/devcontainers/templates/blob/main/LICENSE",    
+    "platforms": [
+        "Node.js",
+        "TypeScript"
+    ]
+}
