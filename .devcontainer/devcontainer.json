@@ -53,13 +53,9 @@
 			"moby": false
 		},
 		"ghcr.io/devcontainers/features/common-utils:2": {
-		  "configureZshAsDefaultShell": true
+		  "configureZshAsDefaultShell": false
 		},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-		  "plugins": "git-commit aliases history python themes zsh-autosuggestions zsh-syntax-highlighting",
-		  "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting.git"
-		},
+		"ghcr.io/devcontainers/features/python:1": {},		
 		"ghcr.io/devcontainers-contrib/features/turborepo-npm:1": {}
 	}
 
