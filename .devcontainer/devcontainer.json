@@ -63,13 +63,15 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "cd scripts/ && chmod +x install_git_subtree.sh && sudo ./install_git_subtree.sh"
+  // Dont' use 'postCreateCommand' as it will run on final devcontainer post creation
+  // use it either on the final devcontainer or, better
+  // make a custom feature to get it included in pre-build
+  // "postCreateCommand": ""
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 
-  // Extra steps after build:  
+  // Extra steps after build:
   // git config user.name "Your Name"
   // git config user.email "youremail@yourdomain.com"
   // (no global to avoid rewrite every time container rebuilds)

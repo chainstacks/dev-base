@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Installs git subtree
+# TODO: implement as devcontainer feature
 
 # Ensure the user has root permissions
 if [[ $EUID -ne 0 ]]; then
