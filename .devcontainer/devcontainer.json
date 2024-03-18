@@ -8,68 +8,94 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "eamodio.gitlens",
-        "ms-azuretools.vscode-docker",
-        "eamodio.gitlens",
-        "heybourn.headwind",
+        // cloud
         "googlecloudtools.cloudcode",
-        "codezombiech.gitignore",
-        "ms-vscode.vscode-typescript-next",
-        "ms-kubernetes-tools.vscode-kubernetes-tools",
-        "NextNav.NextNav",
-        "christian-kohler.npm-intellisense",
-        "christian-kohler.path-intellisense",
-        "ms-playwright.playwright",
-        "Jacano.vscode-pnpm",
-        "esbenp.prettier-vscode",
+
+        // css
         "urbantrout.refactor-css",
-        "PeterMekhaeil.vscode-tailwindcss-explorer",
-        "bradlc.vscode-tailwindcss",
-        "austenc.tailwind-docs",
-        "bourhaouta.tailwindshades",
-        "mxsdev.typescript-explorer",
-        "vitest.explorer",
+        "ecmel.vscode-html-css",
+
+        // docker
+        "ms-azuretools.vscode-docker",
+        "dunstontc.vscode-docker-syntax",
+
+        // git
+        "codezombiech.gitignore",
+        "donjayamanne.githistory",
+        "GitHub.remotehub",
+        "github.vscode-github-actions",
+        "eamodio.gitlens",
+        "michelemelluso.gitignore",
+        "felipecaputo.git-project-manager",
+
+        // icons
         "emmanuelbeziat.vscode-great-icons",
         "vscode-icons-team.vscode-icons",
-        "michelemelluso.gitignore",
-        "ms-vscode.remote-serv",
-        "felipecaputo.git-project-manager",
-        "donjayamanne.githistory",
-        "ecmel.vscode-html-css",
-        "GitHub.remotehub",
-        "ms-vscode.test-adapter-converter",
-        "Orta.vscode-twoslash-queries",
-        "hbenl.vscode-test-explorer",
-        "dunstontc.vscode-docker-syntax",
+
+        // cloud / k8s / terraform
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
         "HashiCorp.terraform",
-        "github.vscode-github-actions"
+
+        // next.js
+        "NextNav.NextNav",
+
+        // npm/pnpm
+        "christian-kohler.npm-intellisense",
+        "Jacano.vscode-pnpm",
+
+        // path
+        "christian-kohler.path-intellisense",
+
+        // remote
+        "ms-vscode.remote-serv",
+
+        // tailwind
+        "austenc.tailwind-docs",
+        "bourhaouta.tailwindshades",
+        "bradlc.vscode-tailwindcss",
+        "heybourn.headwind",
+        "PeterMekhaeil.vscode-tailwindcss-explorer",
+
+        // testing / linting
+        "ms-vscode.test-adapter-converter",
+        "ms-playwright.playwright",
+        "vitest.explorer",
+        "hbenl.vscode-test-explorer",
+        "esbenp.prettier-vscode",
+
+        // typescript
+        "mxsdev.typescript-explorer",
+        "ms-vscode.vscode-typescript-next",
+        "Orta.vscode-twoslash-queries",
+
+        // yaml
+        "redhat.vscode-yaml"
       ]
     }
   },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-      "moby": false
-    },
+    // docker-in-docker is preferable as it allows to isolate dev environment from the host
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false,
+      "azureDnsAutoDetection": false
+    },    
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": false
     },
     "ghcr.io/jungaretti/features/make:1": {},
     "ghcr.io/devcontainers/features/python:1": {},
     "ghcr.io/devcontainers-contrib/features/turborepo-npm:1": {}
-  },
+  }  
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-
-  // Dont' use 'postCreateCommand' as it will run on final devcontainer post creation
-  // use it either on the final devcontainer or, better
-  // make a custom feature to get it included in pre-build
-  // "postCreateCommand": ""
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  // Dont' use 'postCreateCommand' as it will run on final devcontainer therefore
+  // - effects won'd be prebuild
+  // - can only work with files from the target repo
+  // Instead either run postCreateCommand in the consuming repo
+  // or, better, implement as a custome feature so that effects were pre-built
+  // https://containers.dev/guide/author-a-feature
+  // "postCreateCommand": ""  
 
   // Extra steps after build:
   // git config user.name "Your Name"
