@@ -8,6 +8,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        // bash
+        "mads-hartmann.bash-ide-vscode",
+
         // cloud
         "googlecloudtools.cloudcode",
 
@@ -80,7 +83,13 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
       "moby": false,
       "azureDnsAutoDetection": false
-    },    
+    },
+    "features": {
+      "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+        // Comma separated list of packages
+        "packages": "shellcheck"
+      }
+    },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": false
     },
