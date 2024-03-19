@@ -84,19 +84,18 @@
       "moby": false,
       "azureDnsAutoDetection": false
     },
-    "features": {
-      "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
-        // Comma separated list of packages
-        "packages": "shellcheck"
-      }
+    "ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+      // Comma separated list of packages
+      "packages": "shellcheck"
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": false
     },
     "ghcr.io/jungaretti/features/make:1": {},
     "ghcr.io/devcontainers/features/python:1": {},
-    "ghcr.io/devcontainers-contrib/features/turborepo-npm:1": {}
-  }  
+    "ghcr.io/devcontainers-contrib/features/turborepo-npm:1": {},
+    "ghcr.io/realSergiy/dev/git-subtree:0": {}
+  }
 
   // Dont' use 'postCreateCommand' as it will run on final devcontainer therefore
   // - effects won'd be prebuild
@@ -104,7 +103,7 @@
   // Instead either run postCreateCommand in the consuming repo
   // or, better, implement as a custome feature so that effects were pre-built
   // https://containers.dev/guide/author-a-feature
-  // "postCreateCommand": ""  
+  // "postCreateCommand": ""
 
   // Extra steps after build:
   // git config user.name "Your Name"
