@@ -1,13 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "realSrg-node-ts-turbo-base",
+  "name": "dev-base-vsc-dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node",
 
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
       "extensions": [
+        // files
+        "moshfeu.compare-folders",
+
         // bash
         "mads-hartmann.bash-ide-vscode",
 
@@ -24,12 +27,14 @@
 
         // git
         "codezombiech.gitignore",
+        "michelemelluso.gitignore",
         "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "felipecaputo.git-project-manager",
         "GitHub.remotehub",
         "github.vscode-github-actions",
-        "eamodio.gitlens",
-        "michelemelluso.gitignore",
-        "felipecaputo.git-project-manager",
+        "github.vscode-pull-request-github",
+        "ms-vscode.vscode-github-issue-notebooks",
 
         // icons
         "emmanuelbeziat.vscode-great-icons",
@@ -59,17 +64,25 @@
         "heybourn.headwind",
         "PeterMekhaeil.vscode-tailwindcss-explorer",
 
+        // svg
+        "jock.svg",
+
+        // gltf
+        "cesium.gltf-vscode",
+
         // testing / linting
         "ms-vscode.test-adapter-converter",
         "ms-playwright.playwright",
         "vitest.explorer",
         "hbenl.vscode-test-explorer",
         "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
 
         // typescript
         "mxsdev.typescript-explorer",
         "ms-vscode.vscode-typescript-next",
         "Orta.vscode-twoslash-queries",
+        "mariusalchimavicius.json-to-ts",
 
         // yaml
         "redhat.vscode-yaml"
