@@ -1,6 +1,6 @@
 {
     "id": "realSrg-node-ts-turbo-base",
-    "version": "1.11",
+    "version": "1.12",
     "name": "node-ts-turbo by @realSergiy",
     "description": "Develop Node.js based applications with TypeScript, eslint, nvm and yarn",
     "documentationURL": "https://github.com/chainstacks/dev-base",

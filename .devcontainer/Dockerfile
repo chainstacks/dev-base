@@ -19,10 +19,7 @@ RUN \
     && chown ${USERNAME}:npm ${NPM_GLOBAL} /usr/local/etc/npmrc \
     && chmod g+s ${NPM_GLOBAL} \
     && npm config -g set prefix ${NPM_GLOBAL} \
-    && su ${USERNAME} -c "npm config -g set prefix ${NPM_GLOBAL}" \
-    # Install npm packages
-    && su ${USERNAME} -c "umask 0002 && npm install -g npm@latest npm-check-updates@latest" \
-    && npm cache clean --force > /dev/null 2>&1
+    && su ${USERNAME} -c "npm config -g set prefix ${NPM_GLOBAL}"    
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
