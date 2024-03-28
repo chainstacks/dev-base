@@ -21,7 +21,7 @@ RUN \
     && npm config -g set prefix ${NPM_GLOBAL} \
     && su ${USERNAME} -c "npm config -g set prefix ${NPM_GLOBAL}" \
     # Install npm packages
-    && su ${USERNAME} -c "umask 0002 && npm install -g npm@latest " \
+    && su ${USERNAME} -c "umask 0002 && npm install -g npm@latest npm-check-updates@latest" \
     && npm cache clean --force > /dev/null 2>&1
 
 # [Optional] Uncomment this section to install additional OS packages.
@@ -32,5 +32,7 @@ RUN \
 # ARG EXTRA_NODE_VERSION=10
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
-# [Optional] Uncomment if you want to install more global node modules
-# RUN su node -c "npm install -g <your-package-list-here>"
+# Install more global node modules
+RUN su ${USERNAME} -c "umask 0002 && npm install -g npm@latest"
+RUN su ${USERNAME} -c "umask 0002 && npm install -g npm-check-updates@latest"
+RUN npm cache clean --force > /dev/null 2>&1 
